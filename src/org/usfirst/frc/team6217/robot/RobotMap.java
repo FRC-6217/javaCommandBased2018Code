@@ -18,7 +18,25 @@ public class RobotMap {
 	// following variables to use with your drivetrain subsystem.
 	// public static int leftMotor = 1;
 	// public static int rightMotor = 2;
-
+	
+	public final double MAXTURNINGSPEED = 0.8;
+	public final double PERCENT_ACCEL = 0.01;
+	
+	public final int VICTOR_SPX_DRIVE_LEFT1	= 40;
+	public final int VICTOR_SPX_DRIVE_LEFT2 = 41;
+	public final int VICTOR_SPX_DRIVE_RIGHT1 = 42;
+	public final int VICTOR_SPX_DRIVE_RIGHT2 = 43;
+	public final int VICTOR_SPX_GRABBER_LEFT = 45;
+	public final int VICTOR_SPX_GRABBER_RIGHT = 46;
+	
+	public final int JOYSTICK_DRIVE_PORT = 0;
+	public final int JOYSTICK_GAME_PORT = 1;
+	public final int GOVERNER_PORT = 3;
+	
+	public final int GRABBER_IN = 1;
+	public final int GRABBER_OUT = -1;
+	public final int GRABBER_STOP = 0;
+	
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:
 	// public static int rangefinderPort = 1;
