@@ -44,7 +44,23 @@ public class RobotMap {
 	public final static int GRABBER_LEFT_SIDE_AXIS = 1;
 	public final static int GRABBER_RIGHT_SIDE_AXIS = 5;
 
+	public final static int SPARK_ACMESCREW_1 = 8;
+	public final static int SPARK_ACMESCREW_2 = 9;
+	public final static int LIFT_DIRECTION_UP = 1;
+	public final static int LIFT_DIRECTION_DOWN = -1;
+	public final static int LIFT_DIRECTION_FAST = -2;
+	public final static int LIFT_DIRECTION_STOP = 0;
+	public final static double ACME_SCREW_SPEED_UP = 1;
+	public final static double ACME_SCREW_SPEED_DOWN = -0.8;
+	public final static double ACME_SCREW_SPEED_FAST = -1;
 	
+
+    public final static int LIFT_1_UP = 6; //Right Bumper Button
+    public final static int LIFT_1_DOWN = 3; //Right Trigger Button
+    public final static int LIFT_1_FAST = 8;//Start button
+    public final static int LIFT_2_UP = 5; //Left Bumper Up
+    public final static int LIFT_2_DOWN = 2; //Left Trigger Down
+    public final static double TRIGGER_PERCENT_PRESS = .25;//trigger have a percent not a one
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:
 	// public static int rangefinderPort = 1;
