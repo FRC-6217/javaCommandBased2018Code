@@ -33,9 +33,17 @@ public class RobotMap {
 	public final int JOYSTICK_GAME_PORT = 1;
 	public final int GOVERNER_PORT = 3;
 	
-	public final int GRABBER_IN = 1;
-	public final int GRABBER_OUT = -1;
-	public final int GRABBER_STOP = 0;
+	public final static int GRABBER_IN = 1;
+	public final static int GRABBER_OUT = -1;
+	public final static int GRABBER_STOP = 0;
+
+	public final static int GRABBER_IN_BUTTON = 1;//a button In
+	public final static int GRABBER_OUT_BUTTON = 2;//b button Out
+	public final static int GRABBER_STOP_BUTTON = 3;//x Button Stop
+	public final static int GRABBER_SLOW_BUTTON = 4;//y Button Slow In
+	public final static int GRABBER_LEFT_SIDE_AXIS = 1;
+	public final static int GRABBER_RIGHT_SIDE_AXIS = 5;
+
 	
 	// If you are using multiple modules, make sure to define both the port
 	// number and the module. For example you with a rangefinder:
