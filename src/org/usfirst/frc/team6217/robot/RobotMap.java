@@ -26,8 +26,8 @@ public class RobotMap {
 	public final int VICTOR_SPX_DRIVE_LEFT2 = 41;
 	public final int VICTOR_SPX_DRIVE_RIGHT1 = 42;
 	public final int VICTOR_SPX_DRIVE_RIGHT2 = 43;
-	public final int VICTOR_SPX_GRABBER_LEFT = 45;
-	public final int VICTOR_SPX_GRABBER_RIGHT = 46;
+	public final static int VICTOR_SPX_GRABBER_LEFT = 45;
+	public final static int VICTOR_SPX_GRABBER_RIGHT = 46;
 	
 	public final int JOYSTICK_DRIVE_PORT = 0;
 	public final int JOYSTICK_GAME_PORT = 1;
