@@ -11,9 +11,12 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 /*
  */
 public class DriveTrain extends Subsystem {
-
-	// Put methods for controlling this subsystem
-    // here. Call these from Commands.
+	
+	public void initDefaultCommand() {
+        // Set the default command for a subsystem here.
+        setDefaultCommand(new DrivingWithJoystick());
+	}
+	
 	private org.usfirst.frc.team6217.robot.RobotMap RobotMap;
 	private double speedOfY =0;
 	private double speedOfZ =0;
@@ -39,10 +42,6 @@ public class DriveTrain extends Subsystem {
 		}
 	}
     
-	public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        setDefaultCommand(new DrivingWithJoystick());
-    }
 	
     public void resetGyro() {
     	_gyro.reset();

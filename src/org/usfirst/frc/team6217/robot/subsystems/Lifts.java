@@ -15,8 +15,8 @@ public class Lifts extends Subsystem {
         setDefaultCommand(new LiftWithXbox());	
     }
     //Declaring Variables
-	public Spark _acmeScrew1 = new Spark(RobotMap.SPARK_ACMESCREW_1);
-	public Spark _acmeScrew2 = new Spark(RobotMap.SPARK_ACMESCREW_2);
+	private Spark _acmeScrew1 = new Spark(RobotMap.SPARK_ACMESCREW_1);
+	private Spark _acmeScrew2 = new Spark(RobotMap.SPARK_ACMESCREW_2);
 
     public void OperateLift1(double direction) {
     	//This will change the motor to inverted so there isn't any negative values
