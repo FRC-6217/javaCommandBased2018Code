@@ -8,7 +8,7 @@ import org.usfirst.frc.team6217.robot.commands.GrabbingWithXbox;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 /**
- *
+
  */
 public class Grabber extends Subsystem {
     public void initDefaultCommand() {
