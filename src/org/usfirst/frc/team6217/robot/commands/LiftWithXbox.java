@@ -32,12 +32,12 @@ public class LiftWithXbox extends Command {
     	
     	//Lift 1 Operation
     	if (Robot.oi.gameController.getRawButton(RobotMap.LIFT_1_UP)) {
-    		lift1Direction = RobotMap.LIFT_DIRECTION_DOWN;
+    		lift1Direction = RobotMap.LIFT_DIRECTION_UP;
     	}
     	else if (Robot.oi.gameController.getRawButton(RobotMap.LIFT_1_FAST)) {
     		lift1Direction = RobotMap.LIFT_DIRECTION_FAST;
     	}
-    	else if (lift1Down == RobotMap.TRIGGER_PERCENT_PRESS) {
+    	else if (lift1Down >= RobotMap.TRIGGER_PERCENT_PRESS) {
     		lift1Direction = RobotMap.LIFT_DIRECTION_DOWN;
     	}
     	Robot.lift.OperateLift1(lift1Direction);
@@ -46,7 +46,7 @@ public class LiftWithXbox extends Command {
     	if (Robot.oi.gameController.getRawButton(RobotMap.LIFT_2_UP)) {
     		lift2Direction = RobotMap.LIFT_DIRECTION_UP;
     	}
-    	else if (lift2Down == RobotMap.TRIGGER_PERCENT_PRESS) {
+    	else if (lift2Down >= RobotMap.TRIGGER_PERCENT_PRESS) {
     		lift2Direction = RobotMap.LIFT_DIRECTION_DOWN;
     	}
     	Robot.lift.OperateLift2(lift2Direction);

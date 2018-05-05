@@ -24,9 +24,9 @@ import org.usfirst.frc.team6217.robot.subsystems.Lifts;
  * project.
  */
 public class Robot extends TimedRobot {
-	public static DriveTrain driveTrain = new DriveTrain();
-	public static Grabber grabber = new Grabber();
-	public static Lifts lift = new Lifts();
+	public static DriveTrain driveTrain;
+	public static Grabber grabber;
+	public static Lifts lift;
 	
 	public static OI oi;
 
@@ -42,7 +42,7 @@ public class Robot extends TimedRobot {
 		oi = new OI();
 		driveTrain = new DriveTrain();
 		grabber = new Grabber();
-		Lifts lift = new Lifts();
+		lift = new Lifts();
 	}
 
 	/**

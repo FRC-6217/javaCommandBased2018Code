@@ -1,6 +1,7 @@
 package org.usfirst.frc.team6217.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import 	org.usfirst.frc.team6217.robot.RobotMap;
 import org.usfirst.frc.team6217.robot.Robot;
 
 
@@ -8,8 +9,6 @@ import org.usfirst.frc.team6217.robot.Robot;
  *
  */
 public class DrivingWithJoystick extends Command {
-	org.usfirst.frc.team6217.robot.OI OI;
-	org.usfirst.frc.team6217.robot.RobotMap RobotMap;
     public DrivingWithJoystick() {
     	requires(Robot.driveTrain);
     }
@@ -21,7 +20,7 @@ public class DrivingWithJoystick extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.driveTrain.arcadeDrive(OI.DriveStick.getX(), OI.DriveStick.getY(), OI.DriveStick.getZ(), OI.DriveStick.getRawAxis(RobotMap.GOVERNER_PORT), true);
+    	Robot.driveTrain.arcadeDrive(Robot.oi.DriveStick.getRawAxis(0), Robot.oi.DriveStick.getRawAxis(1), Robot.oi.DriveStick.getRawAxis(2), Robot.oi.DriveStick.getRawAxis(RobotMap.GOVERNER_PORT), true);
     }
 
     // Make this return true when this Command no longer needs to run execute()

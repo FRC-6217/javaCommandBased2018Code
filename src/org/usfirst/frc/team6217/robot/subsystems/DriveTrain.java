@@ -2,8 +2,8 @@ package org.usfirst.frc.team6217.robot.subsystems;
 
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import org.usfirst.frc.team6217.robot.RobotMap;
 import org.usfirst.frc.team6217.robot.commands.DrivingWithJoystick;
-
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
@@ -16,11 +16,12 @@ public class DriveTrain extends Subsystem {
         // Set the default command for a subsystem here.
         setDefaultCommand(new DrivingWithJoystick());
 	}
-	
-	private org.usfirst.frc.team6217.robot.RobotMap RobotMap;
 	private double speedOfY =0;
 	private double speedOfZ =0;
 	private double speedOfX =0;
+	private double lastSpeedOfY = 0;
+	private double lastSpeedOfX = 0;
+	private double lastSpeedOfZ = 0;
 	
 	private WPI_VictorSPX _SPX_Left1 = new WPI_VictorSPX(RobotMap.VICTOR_SPX_DRIVE_LEFT1);
 	private WPI_VictorSPX _SPX_Left2 = new WPI_VictorSPX(RobotMap.VICTOR_SPX_DRIVE_LEFT2);
@@ -61,19 +62,19 @@ public class DriveTrain extends Subsystem {
 	}
 	
 	public void arcadeDrive(double xDir, double yDir ,double zRotation ,double governer , boolean squaredInputs) {
-    	double lastSpeedOfY = 0;
-    	double lastSpeedOfX = 0;
-    	double lastSpeedOfZ = 0;
+    	
     	
     	//Dead Zone
-    	xDir = (Math.abs(xDir) < 0.10 ? xDir : 0.0);
-    	yDir = (Math.abs(yDir) < 0.10 ? yDir : 0.0);
-    	zRotation = (Math.abs(zRotation) < 0.15 ? zRotation :0.0);
+    	xDir = (Math.abs(xDir) > 0.10 ? xDir : 0.0);
+    	yDir = (Math.abs(yDir) > 0.10 ? yDir : 0.0);
+    	zRotation = (Math.abs(zRotation) > 0.15 ? zRotation :0.0);
     	
     	//Changing the speed according to the dial on the Joystick
     	xDir *= (1-governer);
-    	yDir *= (1-governer);
+    	//This is axis needs to be inverted
+    	yDir *= -(1-governer);
     	zRotation *= (1-governer);
+    	
 	
     	//Limiting the turning speed to 50%
     	if (zRotation > RobotMap.MAXTURNINGSPEED){
@@ -120,13 +121,6 @@ public class DriveTrain extends Subsystem {
     	}
     	else if (Math.abs(yDir) > Math.abs(lastSpeedOfY)){
     		speedOfY =  lastSpeedOfY + (yDir * RobotMap.PERCENT_ACCEL);
-    		if (!signbit(speedOfY) && speedOfY < 0.3){
-    			speedOfY = 0.3;
-    		}
-
-    		else if (signbit(speedOfY) && speedOfY > -0.3){
-    			speedOfY = -0.3;
-    		}
     	}
 
     	//Acceleration of x
